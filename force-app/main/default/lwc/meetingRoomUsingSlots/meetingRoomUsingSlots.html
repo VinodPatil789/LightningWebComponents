@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Room Information">
+        <template if:true={showRoomInfo}>
+            <div class="slds-p-around_medium lgc-bg" >
+                <slot name="roomInfo"></slot>
+                <slot></slot>  <!--This is unaname slots....so additional mark up will be sit here-->
+
+                <!--Below addtional mark up we are going to pass from parent cmp-->
+                <!-- <lightning-tile label={meetingRoom.RoomNumber}>
+                <p class="slds-truncate" title={meetingRoom.RoomCapacity}>{meetingRoom.RoomCapacity}</p>
+            </lightning-tile> -->
+
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Get Id from  url and Object Api [Remember put this component on the Record Page then it will work]">
+
+        <div class="slds-p-around_medium">
+            <lightning-record-form object-api-name={objectApiName} record-id={recordId} columns="2" mode="edit"
+                                    layout-type="Full" onsuccess={onSuccessHandler}></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

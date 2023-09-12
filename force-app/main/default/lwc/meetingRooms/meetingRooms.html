@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Meeting Rooms">
+
+        <h1><b>Here we are demonsrating how public property and events handling works</b></h1><br />
+
+          <!--     --------------------------------------------------------------------------------------------------------      -->
+
+        <h1>Public Property</h1>
+
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12">
+                <ul>
+                    <template for:each={meetingRooms} for:item="room">
+                        <li key={room.RoomNumber} style="padding:5px">
+                            <!--Remember when you use your LWC in other component user kebab case instead of camel case as shown below-->
+                            <c-meeting-room meeting-room={room}></c-meeting-room>
+                            <!--As we are passing room which is object because in child cmp we have created object so going to accept object-->
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+
+            <!--     --------------------------------------------------------------------------------------------------------      -->
+
+            <h1>Event handling from child makrup</h1>
+
+            <lightning-layout-item size="8">
+                <ul>
+                    <template for:each={meetingRooms} for:item="room">
+                        <li key={room.RoomNumber} style="padding:5px">
+                            <c-meeting-room meeting-room={room} ontileclick={tileSelectHandler}></c-meeting-room>
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+                You have selected <Strong>{selectedMeetingRoom}</Strong>
+            </lightning-layout-item>
+
+
+
+          <!--     --------------------------------------------------------------------------------------------------------      -->
+
+        <h1>Event handling Programatically</h1>
+
+        <lightning-layout-item size="8">
+            <ul>
+                <template for:each={meetingRooms} for:item="room">
+                    <li key={room.RoomNumber} style="padding:5px">
+                        <c-meeting-room meeting-room={room}></c-meeting-room>
+                    </li>
+                </template>
+            </ul>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="4">
+            You have selected <Strong>{selectedMeetingRoom}</Strong>
+        </lightning-layout-item>
+        </lightning-layout>
+
+    </lightning-card>
+</template>

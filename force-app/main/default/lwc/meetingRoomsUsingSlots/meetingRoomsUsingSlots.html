@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Meeting Rooms">
+
+        <h1>We are supplying mark up using slot</h1>
+        <!-- key points: when we use slot as attribute in parente component to pass the value to child component where it used as tag(markup component)
+            
+            There are 2 types 
+            a.Name slots- it can be multiple
+            b.Unnamed slots - it should be only one in component
+
+            To pass value to unnamed slot we direclty pass additional markup in parent component, so this markup automatically goes to unnmaed slot because we dont not refere slot name in it 
+        -->
+
+
+        <lightning-layout>
+            <lightning-layout-item size="8">
+                <ul>
+                    <template for:each={meetingRooms} for:item="room">
+                        <li key={room.RoomNumber} style="padding:5px">
+
+                            <c-meeting-room-using-slots show-room-info>
+                            
+                            <!--Here we are passing additional mark up inside the child cmp where we declare slots on child as mark up and in parent we declare it as attribute-->
+                            <lightning-tile label={room.RoomNumber} slot="roomInfo">
+                                <p class="slds-truncate" title={room.RoomCapacity}>{room.RoomCapacity}</p>
+                            </lightning-tile>
+
+                            <div>Additnonal Mark up will go in Unnamed slot</div>
+                        </c-meeting-room-using-slots>
+
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>
+
+    </lightning-card>
+</template>

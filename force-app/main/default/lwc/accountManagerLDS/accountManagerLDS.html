@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Keep your Account Ready">
+        
+        <h1><b>Here we are using LDS to create and View the Record</b></h1>
+
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-input label="Name" name="Account Name"  onchange={nameChangeHandler}>
+                </lightning-input>
+                <lightning-input label="Phone" name="Account Phone" type="phone" onchange={phoneChangeHandler}>
+                </lightning-input>
+                <lightning-input label="Website" name="Account Website" type="url" onchange={websiteChangeHandler}>
+                </lightning-input>
+
+                <lightning-button name="create" label="Create" variant="Brand" onclick={createAccountHandler}>
+                </lightning-button>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around-small">
+                <template if:true={AccountExist}>
+                   if we had not use get method in js then we would have to use in the below way to retrieve the value-- new approrach
+                         <P><lightning-formatted-text value={acctRec.fields.Name.value}></lightning-formatted-text></P>
+                        <P><lightning-formatted-phone value={acctRec.fields.Phone.value}></lightning-formatted-phone></P>
+                        <P><lightning-formatted-url value={acctRec.fields.Website.value}></lightning-formatted-url></P>
+                   
+                   <!--  <P><lightning-formatted-text value={retAccountName}></lightning-formatted-text></P>
+                    <P><lightning-formatted-phone value={retAccountPhone}></lightning-formatted-phone></P>
+                    <P><lightning-formatted-url value={retAccountWebsite}></lightning-formatted-url></P> -->
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+
+    </lightning-card>
+</template>

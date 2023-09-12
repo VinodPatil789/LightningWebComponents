@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Bmi Calculator Using Import Module to Show js Code sharing">
+        <lightning-input type="number" step="0.01" label="Weight in Kilogram" onchange={onWeightChangeHandler} ></lightning-input>
+        <lightning-input type="number" step="0.01" label="Height in Meters" onchange={onHeightChangeHandler} ></lightning-input>
+        <lightning-button label="Calculate BMI" onclick={calculateBmiHandler}></lightning-button>
+
+       <!--  <div>
+            The BMI is: {bmi}
+        </div> -->
+
+        <h1>Below value shows using getter Property</h1>
+        <div>
+            {bmiValue}
+        </div>
+        
+
+    </lightning-card>
+</template>

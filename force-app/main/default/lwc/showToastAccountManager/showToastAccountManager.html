@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Show Toast ">
+        <h1>See the Toast messages!</h1>
+        <div class="slds-p-around_medium">
+            <lightning-record-form object-api-name="Account" record-id={recordId} columns="2"
+                                    fields={fieldArray} onsuccess={onSuccessHandler}></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

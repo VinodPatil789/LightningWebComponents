@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Create Generic Record form ">
+        <h1><b>User will have to select object first(from edit page option) component will render the field according to that</b></h1>
+        <h2>Also leaned how to handle this things from metaconfiguration</h2>
+        <h2>Also added the targets to the meta file so we can use this component in community</h2>
+
+        <!--In meta file we have already set up the targets that are app page and home page where we have to put the component-->
+        
+        <div class="slds-p-around_medium">
+            <lightning-record-form object-api-name={objectApiName} record-id={recordId} columns="2"
+                                    layout-type="Full" onsuccess={onSuccessHandler}></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

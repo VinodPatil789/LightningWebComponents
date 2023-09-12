@@ -1,0 +1,9 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium lgc-bg" onclick={tileClickHandle}>
+            <lightning-tile label={meetingRoom.RoomNumber}>
+                <p class="slds-truncate" title={meetingRoom.RoomCapacity}>{meetingRoom.RoomCapacity}</p>
+            </lightning-tile>
+        </div>
+    </lightning-card>
+</template>

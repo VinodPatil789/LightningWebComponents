@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Display Account Using Imperative call to Apex">
+        <h1> This Demonstration also cover the Show Toast notification</h1>
+
+        <lightning-input type="number" label="Number of Accounts" onchange={noOfAcctsChangeHandler}></lightning-input>
+        <p>
+            <lightning-button label="Get Accounts" onclick={getAcctHandler}></lightning-button>
+        </p>
+
+        <ul>
+            <template if:true={responseRecieved}>
+                <template for:each={acctList} for:item="acct">
+                    <li key={acct.Id}>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-tile label={acct.Name} type="media">
+                                <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                                <p class="slds-truncate" title={acct.Phone}>{acct.Phone}</p>
+                            </lightning-tile>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

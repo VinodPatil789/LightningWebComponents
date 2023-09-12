@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Create Account Via Lightning Record Forms">
+
+        <h1><b>Account creation using Lihgtning base component - Lightning Record Form</b></h1>
+        <h1><b>Lightning Record Form- Provide of both Lightning record view and Edit form</b></h1>
+
+        <!-- one way where required fields are being retrieved on the form layout -->
+        <div class="slds-p-around_medium">
+            <lightning-record-form object-api-name="Account" record-id={recordId}  columns="2"
+            fields={fieldArray} onsuccess={onsuccessHandler}></lightning-record-form>
+
+            <!--Note: if we pass record id in the attriubte then we can view and edit record but if we do not pass any id then recod form will open in create mode-->
+        </div>
+
+
+        <!-- Other way to show all fields on the form layout -->
+        <div class="slds-p-around_medium">
+            <lightning-record-form object-api-name="Account" record-id={recordId}  columns="2"
+            layout-type="full" onsuccess={onsuccessHandler}></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

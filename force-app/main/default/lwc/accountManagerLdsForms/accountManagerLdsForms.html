@@ -1,0 +1,44 @@
+<template>
+        <lightning-card title="Crete a Account Via Forms!">
+            <h1><b>Account Creation Using Lightning Base component - Lightning record view and edit form </b></h1>
+            
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-record-edit-form object-api-name="Account" onsuccess={successHandler}>
+                    <p><lightning-input-field field-name="Name"></lightning-input-field></p>
+                    <p><lightning-input-field field-name="Phone"></lightning-input-field></p>
+                    <p><lightning-input-field field-name="Website"></lightning-input-field></p>
+
+
+                    <!--Note: lightning input field automatically create type  accoding the type of field
+                    
+                        -Lihgtning recrod edit form autoamatically handle success resposne 
+                        -Always remember to use type of submit for button creation
+                    -->
+                    <p>
+                        <lightning-button
+                                class="slds-m-top_small"
+                                type="submit"
+                                label="Create new"
+                                variant="Brand"
+                            >
+                        </lightning-button>
+                    </p>
+                </lightning-record-edit-form>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="View Account Record">
+                    <lightning-record-view-form record-id={recordId} object-api-name="Account">
+                        <div class="slds-box">
+                            <p><lightning-output-field field-name="Name"></lightning-output-field></p>
+                            <p><lightning-output-field field-name="Phone"></lightning-output-field></p>
+                            <p><lightning-output-field field-name="Website"></lightning-output-field></p>
+                         </div>
+                    </lightning-record-view-form>
+                        
+                </lightning-card>                
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

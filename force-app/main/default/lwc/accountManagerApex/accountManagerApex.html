@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Display Account Using Apex">
+        <ul>
+            <template if:true={responseRecieved}>
+                <template for:each={acctList.data} for:item="acct">
+                    <li key={acct.Id}>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-tile label={acct.Name} type="media">
+                                <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                                <p class="slds-truncate" title={acct.Phone}>{acct.Phone}</p>
+                            </lightning-tile>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

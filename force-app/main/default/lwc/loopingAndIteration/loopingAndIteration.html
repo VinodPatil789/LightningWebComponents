@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Iteration and Looping in LWC">
+        <h1>Below is the example of For each directive</h1>
+        <template for:each={cityList} for:item="city">
+            <p key={city}>{city}</p>
+            <!-- For item hold the current item (each item ) -->
+        </template>
+
+        <h1>Below is the example of Iterator Directive</h1>
+        <template iterator:it={cityList} >
+            <p key={it.value}>{it.value}</p>
+            <p key={it.first}>it.first.value</p>
+            <p key={it.last}>{it.last.value}</p>
+
+            <!-- In iterator it, it hold the current value
+            It is provide us great help when we want to add some dynamic properties to first and last element
+            for that we have it.first , it.last, it.index paramers  -->
+        </template>
+
+    </lightning-card>
+</template>
