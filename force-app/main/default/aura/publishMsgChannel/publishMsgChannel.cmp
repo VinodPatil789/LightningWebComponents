@@ -1,0 +1,9 @@
+<aura:component
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+    access="global">
+
+    <lightning:card title="Publisher message channel Aura cmp">
+        <lightning:button label="Send Payload" onclick="{! c.handleClick }"/>
+            <lightning:messageChannel type="abcd__c" aura:id="sampleMessageChannel" />
+    </lightning:card>
+</aura:component>
