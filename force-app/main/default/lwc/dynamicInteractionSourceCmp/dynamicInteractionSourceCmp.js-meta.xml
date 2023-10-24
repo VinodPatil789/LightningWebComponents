@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>52.0</apiVersion>
+  <isExposed>true</isExposed>
+  <targets>
+    <target>lightning__AppPage</target>
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightning__AppPage">
+      <event name="myDynamicInteractionEvent" label="Button Clicked" description="This event fires when an item is selected.">
+        <schema>
+          {
+            "type": "object",
+            "properties": {
+              "inputData": {
+                "type": "string",
+                "title": "Input Data",
+                "description": "Enter a text."
+          },
+              "apiName": {
+                "type": "string"
+              }
+            }
+          }
+        </schema>
+      </event>
+    </targetConfig>
+  </targetConfigs>
+  <description>meta xml description</description>
+</LightningComponentBundle>
