@@ -19,7 +19,7 @@ export default class SubscribeMsgLwc extends LightningElement {
     subscribeToMessageChannel() {
         if (!this.subscription) {
             this.subscription = subscribe(
-                this.dataSelected,
+                this.wiredContextMsg,
                 dataSelected,
                 (message) => this.handleMessage(message),
                 { scope: APPLICATION_SCOPE },
