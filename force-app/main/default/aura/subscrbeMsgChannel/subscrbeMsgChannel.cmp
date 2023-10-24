@@ -1,0 +1,14 @@
+<aura:component
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+    access="global">
+    <aura:attribute name="recDataValue" type="String" />
+    <aura:attribute name="recNameValue" type="String" />
+
+    <lightning:card title="Subscriber message channel Aura cmp">
+    <lightning:formattedText value="{!v.recDataValue}" />
+    <lightning:formattedText value="{!v.recNameValue}" />
+</lightning:card>
+
+    <lightning:messageChannel type="abcd__c" onMessage="{!c.handleChanged}" scope="APPLICATION" />
+
+</aura:component>
