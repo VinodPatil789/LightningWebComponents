@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="LDS get Record">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12">
+                <template if:true={opportunityRec.data}>
+                    <p>Opportunity Name:<lightning-formatted-text value={opportunityRec.data.fields.Name.value}></lightning-formatted-text></p>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <template if:true={opportunityRecData.data}>
+                    <p>Opportunity Name:<lightning-formatted-text value={oppourtunityName}></lightning-formatted-text></p>
+                    <p>Opportunity Account Name:<lightning-formatted-text value={oppourtunityAccountName}></lightning-formatted-text></p>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <template if:true={oppAcctData.data}>
+                    <p>Account Name:<lightning-formatted-text value={name}></lightning-formatted-text></p>
+                    <p>Account Phone:<lightning-formatted-text value={phone}></lightning-formatted-text></p>
+                    <p>Account Industry:<lightning-formatted-text value={industry}></lightning-formatted-text></p>
+                    <p>Account Owner:<lightning-formatted-text value={owner}></lightning-formatted-text></p>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <template if:true={oppAcctRecData.data}>
+                    <p>Account Name:<lightning-formatted-text value={acctName}></lightning-formatted-text></p>
+                    <p>Account Industry:<lightning-formatted-text value={acctIndustry}></lightning-formatted-text></p>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+        
+    </lightning-card>
+</template>
