@@ -3,7 +3,6 @@ import { deleteRecord } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import { NavigationMixin } from "lightning/navigation";
 
-
 export default class LdsDeleteRecordCmp extends NavigationMixin(LightningElement) {
   // Flexipage provides recordId and objectApiName
   @api recordId;
@@ -11,25 +10,27 @@ export default class LdsDeleteRecordCmp extends NavigationMixin(LightningElement
 
   @track error;
   deleteHandler(event) {
-    deleteRecord('0035j00000TgSyLAAV')
+    console.log('delelte handler was called');
+    this.dispatchEvent(
+      new ShowToastEvent({
+        title: "Success",
+        message: "Record deleted",
+        variant: "success",
+      }),
+    );
+    // Navigate to a record home page after
+    // the record is deleted, such as to the
+    // contact home page
+    this[NavigationMixin.Navigate]({
+      type: "standard__objectPage",
+      attributes: {
+        objectApiName: "Contact",
+        actionName: "home",
+      },
+    });
+  
+    deleteRecord(this.recordId)
       .then(() => {
-        this.dispatchEvent(
-          new ShowToastEvent({
-            title: "Success",
-            message: "Record deleted",
-            variant: "success",
-          }),
-        );
-        // Navigate to a record home page after
-        // the record is deleted, such as to the
-        // contact home page
-        this[NavigationMixin.Navigate]({
-          type: "standard__objectPage",
-          attributes: {
-            objectApiName: "Contact",
-            actionName: "home",
-          },
-        });
       })
       .catch((error) => {
         this.dispatchEvent(
