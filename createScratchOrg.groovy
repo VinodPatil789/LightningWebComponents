@@ -12,13 +12,6 @@ node {
 		def JWT_KEY_CRED_ID ="sfserverkey"
 		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
 
-		def command(script) {
-		    if (isUnix()) {
-		        return sh(returnStatus: true, script: script);
-		    } else {
-		        return bat(returnStatus: true, script: script);
-		    }
-		}
 		
 
 
