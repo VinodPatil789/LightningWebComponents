@@ -36,7 +36,7 @@ node {
 				// -------------------------------------------------------------------------
 
 				stage('Authorize DevHub And Create Scratch Org') {
-					rc = command "\${toolbelt}\sf org login jwt --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
+					rc = command "${toolbelt}/sf org login jwt --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
 					if (rc != 0) {
 						error 'Dev hub org authorization failed.'
 					}
