@@ -3,7 +3,6 @@
 import groovy.json.JsonSlurperClassic
 
 node {
-	try{
 		def SF_USERNAME
 		def BUILD_NUMBER="${env.BUILD_NUMBER}"
 		def RUN_ARTIFACT_DIR 
@@ -11,7 +10,7 @@ node {
 		def SFDC_HOST = "${params.SFDC_HOST}"
 		def JWT_KEY_CRED_ID ="sfserverkey"
 		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
-    def toolbelt = tool 'toolbelt'
+  		def toolbelt = tool 'toolbelt'
 
 
 
@@ -77,12 +76,5 @@ node {
 		return bat(returnStatus: true, script: script);
     }
 }
-	}
 	
-	finally{
-		emailext (body : "Scratch of was created successfully ${currentBuild.currentResult}: job ${env.JOB_NAME}",
-				subject : "Scratch of was created successfully",
-				to : "vinod.patil789@gmail.com")
-		
-	}
 }
