@@ -10,7 +10,7 @@ node {
 		def SFDC_HOST = "${params.SFDC_HOST}"
 		def JWT_KEY_CRED_ID ="sfserverkey"
 		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
-  		def toolbelt = tool 'toolbelt'
+
 
 
 
@@ -36,13 +36,13 @@ node {
 				// -------------------------------------------------------------------------
 
 				stage('Authorize DevHub And Create Scratch Org') {
-					rc = command "${toolbelt}/sf org login jwt --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
+					rc = bat returnStatus:true , script : "org login jwt --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
 					if (rc != 0) {
 						error 'Dev hub org authorization failed.'
 					}
 				
 
-					rmsg = command "${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30"
+					rmsg = bat returnStatus:true , script : "force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30"
 					printf rmsg
 					
 					def jsonSlurper = new JsonSlurperClassic();
