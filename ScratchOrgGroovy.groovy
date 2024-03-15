@@ -36,13 +36,13 @@ node {
 				// -------------------------------------------------------------------------
 
 				stage('Authorize DevHub And Create Scratch Org') {
-					rc = bat returnStatus:true , script : "sfdx force:auth:jwt:grant --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
+					rc = sh returnStatus:true , script : "sfdx force:auth:jwt:grant --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
 					if (rc != 0) {
 						error 'Dev hub org authorization failed.'
 					}
 				
 
-					rmsg = bat returnStatus:true , script : "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30"
+					rmsg = sh returnStatus:true , script : "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30"
 					printf rmsg
 					
 					def jsonSlurper = new JsonSlurperClassic();
