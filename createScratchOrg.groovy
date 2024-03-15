@@ -10,7 +10,7 @@ node {
 		def HUB_ORG_USERNAME = "${params.HUB_ORG_USERNAME}"
 		def SFDC_HOST = "${params.SFDC_HOST}"
 		def JWT_KEY_CRED_ID ="sfserverkey"
-		def CONNECTED_APP_CONSUMER_KEY="${params.HUB_ORG_USERNAME}"
+		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
 
 
 
