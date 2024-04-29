@@ -13,7 +13,11 @@ node {
 		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
 
 		
-
+		println 'KEY IS' 
+		    println JWT_KEY_CRED_ID
+		    println HUB_ORG
+		    println SFDC_HOST
+		    println CONNECTED_APP_CONSUMER_KEY
 
 
 		// -------------------------------------------------------------------------
