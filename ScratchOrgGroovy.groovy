@@ -8,7 +8,7 @@ node {
 		def RUN_ARTIFACT_DIR 
 		def HUB_ORG_USERNAME = "${params.HUB_ORG_USERNAME}"
 		def SFDC_HOST = "${params.SFDC_HOST}"
-		def JWT_KEY_CRED_ID =env.JWT_CRED_ID_DH
+		def JWT_KEY_CRED_ID = "serverkeydeploymentfile"
 		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
 
 
