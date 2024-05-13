@@ -8,11 +8,15 @@ node {
 		def RUN_ARTIFACT_DIR 
 		def HUB_ORG_USERNAME = "${params.HUB_ORG_USERNAME}"
 		def SFDC_HOST = "${params.SFDC_HOST}"
-		def JWT_KEY_CRED_ID =  env.JWT_CRED_ID_DH
+		def JWT_KEY_CRED_ID ="sfserverkey"
 		def CONNECTED_APP_CONSUMER_KEY="${params.CONNECTED_APP_CONSUMER_KEY}"
 
-
-
+		println 'KEY IS' 
+		    println JWT_KEY_CRED_ID
+		    println HUB_ORG_USERNAME
+		    println SFDC_HOST
+		    println CONNECTED_APP_CONSUMER_KEY
+	
 
 		// -------------------------------------------------------------------------
 		// Check out code from source control.
