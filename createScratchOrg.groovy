@@ -15,7 +15,7 @@ node {
 		
 		println 'KEY IS' 
 		    println JWT_KEY_CRED_ID
-		    println HUB_ORG
+		    println HUB_ORG_USERNAME
 		    println SFDC_HOST
 		    println CONNECTED_APP_CONSUMER_KEY
 
