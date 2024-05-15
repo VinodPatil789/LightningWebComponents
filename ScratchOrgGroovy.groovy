@@ -46,7 +46,9 @@ node {
 					}
 				
 
-					rmsg = bat(returnStdout:true , script : "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30").trim()
+					rmsg = bat(returnStdout:true , script : "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30")
+					rmsg.replaceAll("C:\Users\vinod\.jenkins\workspace\Create_Scratch_orgs>sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30","")
+					
 					println rmsg
 					
 					def jsonSlurper = new JsonSlurperClassic();
