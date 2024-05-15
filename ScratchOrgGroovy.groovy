@@ -58,6 +58,8 @@ node {
 						error 'Salesforce scratch org creation failed.' + robj.message
 					}
 					SF_USERNAME = robj.result.uesrname
+					println SF_USERNAME
+					println robj.result.uesrname
 					robj = null
 					
 				}
