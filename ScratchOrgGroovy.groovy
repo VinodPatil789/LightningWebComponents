@@ -68,7 +68,7 @@ node {
 					password = bat returnStdout : true, script :"sfdx force:user:password:generate --targetusername ${SF_USERNAME}"
 					passwordOutput = bat returnStdout : true, script : "sf org display --targetusername ${SF_USERNAME}"
 					
-					echo passwordOutput
+					println passwordOutput
 
 				}
 		
