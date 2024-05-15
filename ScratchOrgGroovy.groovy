@@ -47,6 +47,7 @@ node {
 				
 
 					rmsg = bat returnStatus:true , script : "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30"
+					println 'rmsg is '
 					println rmsg
 					
 					def jsonSlurper = new JsonSlurperClassic();
