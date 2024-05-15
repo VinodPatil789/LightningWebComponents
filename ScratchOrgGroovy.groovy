@@ -50,9 +50,9 @@ node {
 					println 'rmsg is '
 					println rmsg
 					
-					def jsonSlurper = new JsonSlurper();
+					def jsonSlurper = new JsonSlurperClassic();
 					def robj = jsonSlurper.parseText(rmsg)
-					if (robj != 0) {
+					if (robj.status != 0) {
 						error 'Salesforce scratch org creation failed.' + robj.message
 					}
 					SF_USERNAME = robj.result.uesrname
