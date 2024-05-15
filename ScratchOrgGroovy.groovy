@@ -50,6 +50,7 @@ node {
 					
 					def jsonSlurper = new JsonSlurperClassic();
 					def robj = jsonSlurper.parseText(rmsg)
+					println robj
 					if (robj.status != 0) {
 						error 'Salesforce scratch org creation failed.' + robj.message
 					}
