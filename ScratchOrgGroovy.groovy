@@ -64,8 +64,8 @@ node {
 				// -------------------------------------------------------------------------
 
 				stage('Display Scratch Org Info') {
-					password = sh returnStdout : true, script :"sfdx force:user:password:generate --targetusername ${SF_USERNAME}"
-					passwordOutput = sh returnStdout : true, script : "sf org display --targetusername ${SF_USERNAME}"
+					password = bat returnStdout : true, script :"sfdx force:user:password:generate --targetusername ${SF_USERNAME}"
+					passwordOutput = bat returnStdout : true, script : "sf org display --targetusername ${SF_USERNAME}"
 					
 					echo passwordOutput
 
