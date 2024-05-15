@@ -47,7 +47,7 @@ node {
 				
 
 					rmsg = bat(returnStdout:true , script : "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername -d 30").trim()
-					rmsg.readLines().drop(1).join(" ")
+					rmsg = rmsg.readLines().drop(1).join(" ")
 					
 					println rmsg
 					
