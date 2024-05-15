@@ -57,7 +57,7 @@ node {
 					if (robj.status != 0) {
 						error 'Salesforce scratch org creation failed.' + robj.message
 					}
-					SF_USERNAME = robj.result.uesrname
+					SF_USERNAME = robj.result.username
 					println SF_USERNAME
 					println robj.result.uesrname
 					robj = null
