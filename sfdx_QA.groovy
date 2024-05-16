@@ -34,7 +34,7 @@ node {
       // -------------------------------------------------------------------------
 
       stage('Push To Scratch Org') {
-        rc = bat returnStatus: true, script: "sfdx force:auth:jwt:grant --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${server_key_file} --setdefaultdevhubusername"
+        rc = bat returnStatus: true, script: "sfdx force:auth:jwt:grant --instance-url ${SFDC_HOST} --client-id ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG_USERNAME} --jwt-key-file ${jwt_key_file} --setdefaultdevhubusername"
         if (rc != 0) {
           error 'Dev hub org authorization failed.'
         }
