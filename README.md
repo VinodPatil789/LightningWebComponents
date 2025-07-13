@@ -93,4 +93,12 @@ To run LWC Javascript unit tests with code lightning and code coverage npm run t
 
     sfdx force:org:open
 
+9. Display org info:
+
+    sf org display
+
+10. Create password for scratch org
+
+    sf org generate password --target-org <username-or-alias>
+
 ***** Enjoy Your Coding *****
