@@ -1,0 +1,47 @@
+Set a UserName 
+
+	git config --global user.name <GitHub user name>
+	e.g. git config --global user.name "vrdorik"
+
+set a email id 
+	
+	git config --global user.email <GitHub email id>
+	e.g. git config --global user.email "vinu.dorik@gmail.com"	
+
+check the remote branch status
+
+	git remote -v
+
+staging the all file
+
+	git add.
+
+Initial commit
+
+	git commit -m "Initial commit"
+
+Push to GitHub
+	 
+	git push
+
+Set up upstream origin main (use below command if normal push (above command) does not work)
+
+	git push --set-upstream origin main
+
+forcefully push the data (use when above command fails and perform force push)
+
+	git push -f origin main
+
+set remote branch 
+	
+	git remote set-url origin <GitHubRepo url>
+
+	for e.g git remote set-url origin https://github.com/Curious-Learner-test/LWC-Development.git
+
+Pull the branch and check the histories
+
+	git pull origin main --allow-unrelated-histories
+
+Erase previous credentials (delete previous branch linkage)
+	 
+	git credential-manager-core erase
