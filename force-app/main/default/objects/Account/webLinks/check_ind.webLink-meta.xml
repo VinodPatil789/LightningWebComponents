@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check_ind</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>check ind</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/36.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/36.0/apex.js&quot;)}
+
+var Industry= &quot;true&quot;;
+
+IF(Industry == &quot;true&quot;) {
+   alert(&apos;Industry is banking);}else{
+  alert(&apos;Industry is not banking);
+}</url>
+</WebLink>

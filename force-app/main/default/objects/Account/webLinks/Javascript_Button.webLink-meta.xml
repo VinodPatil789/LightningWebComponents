@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Javascript_Button</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Javascript Button</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/36.0/connection.js&quot;)}
+
+var x = &quot;{!Account.Name}&quot;;
+
+var indusVar = &quot;{!Account.Industry}&quot;;
+
+alert(&quot;indusVar &quot; + indusVar);
+
+
+if(&quot;{!ISPICKVAL( Account.Industry , &quot;Banking&quot;)}&quot;){
+    alert(&quot;You are not supposed to select banking as industry&quot;);
+}</url>
+</WebLink>

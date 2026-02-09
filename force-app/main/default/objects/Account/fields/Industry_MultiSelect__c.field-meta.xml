@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_MultiSelect__c</fullName>
+    <externalId>false</externalId>
+    <label>Industry MultiSelect</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Industry</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banking 1</fullName>
+                <default>false</default>
+                <label>Banking 1</label>
+            </value>
+            <value>
+                <fullName>Banking 2</fullName>
+                <default>false</default>
+                <label>Banking 2</label>
+            </value>
+            <value>
+                <fullName>Education 1</fullName>
+                <default>false</default>
+                <label>Education 1</label>
+            </value>
+            <value>
+                <fullName>Education 2</fullName>
+                <default>false</default>
+                <label>Education 2</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Banking</controllingFieldValue>
+            <valueName>Banking 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Banking</controllingFieldValue>
+            <valueName>Banking 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <valueName>Education 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <valueName>Education 2</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
