@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>picklistControlValidation</fullName>
+    <active>false</active>
+    <description>This will control the Picklist values</description>
+    <errorConditionFormula>NOT(ISCHANGED( Industry ))</errorConditionFormula>
+    <errorMessage>you can not change industry</errorMessage>
+</ValidationRule>

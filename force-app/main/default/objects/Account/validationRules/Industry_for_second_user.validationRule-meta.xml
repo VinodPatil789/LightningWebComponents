@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_for_second_user</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( $Profile.Name == &apos;Custom Profile for other user&apos;, 
+$Profile.Name  &lt;&gt;  &apos;system administrator&apos;,
+ISPICKVAL(Industry, &quot;&quot;))</errorConditionFormula>
+    <errorMessage>Industry should not be blank for other user VR</errorMessage>
+</ValidationRule>

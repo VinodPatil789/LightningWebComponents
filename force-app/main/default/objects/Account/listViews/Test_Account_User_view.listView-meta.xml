@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Account_User_view</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.SALES</columns>
+    <columns>Has_Support_Plan__c</columns>
+    <columns>list_view_field__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Test Account User view</label>
+    <sharedTo>
+        <group>List_View_Group</group>
+    </sharedTo>
+</ListView>
